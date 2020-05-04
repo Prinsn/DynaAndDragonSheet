@@ -6,5 +6,5 @@ import { Output, Component } from '@angular/core';
     styleUrls: ["./skill.component.less"]
 })
 export class SkillComponent {
-
+    
 }
