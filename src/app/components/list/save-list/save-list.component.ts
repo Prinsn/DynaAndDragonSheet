@@ -7,10 +7,10 @@ import { Save } from 'src/app/classes/save';
     styleUrls: ["./save-list.component.less"]
 })
 export class SaveListComponent {
-    @Input() ngModel: Save[];
-    @Output() ngModelChange = new EventEmitter<Save[]>();
+    @Input() data: Save[];
+    @Output() dataChange = new EventEmitter<Save[]>();
 
     push(){
-        this.ngModelChange.emit(this.ngModel);
+        this.dataChange.emit(this.data);
     }
 }

@@ -7,23 +7,23 @@ import { Bonus } from 'src/app/classes/bonus';
     styleUrls: ["./bonus-list.component.less"]
 })
 export class BonusListComponent {
-    @Input() ngModel: Bonus[];
-    @Output() ngModelChanged = new EventEmitter<Bonus[]>();
+    @Input() data: Bonus[];
+    @Output() dataChange = new EventEmitter<Bonus[]>();
 
     newBonus() {
         var newBonus = new Bonus("", 0);
         newBonus.removable = true;
-        this.ngModel.push(newBonus);        
+        this.data.push(newBonus);        
         this.push();
     }
 
     push(){
-        this.ngModelChanged.next(this.ngModel);
+        this.dataChange.next(this.data);
     }
 
-    remove(bonus: Bonus){
-        let at = this.ngModel.indexOf(bonus);
-        this.ngModel = this.ngModel.slice(at);
+    remove(bonus: Bonus){        
+        let at = this.data.indexOf(bonus);
+        this.data.splice(at);
         this.push();
     }
 }

@@ -1,6 +1,7 @@
 <div class="attribute">
-    <label class="name">{{ngModel.shortName}}</label>
-    <input class="value" [ngModel]="ngModel.total" (ngModelChange)="push()"><input>
-    <label class="mod">{{ngModel.mod}}</label>
-    <bonus-list [ngModel]="ngModel.boni" (ngModelChnage)="push()"></bonus-list>
+    <label class="two-wide">{{data.shortName}}</label>            
+    <input type="number" class="two-wide" [(ngModel)]="data.base" (change)="push()" min="-99" max="99"/>    
+    <label class="final two-wide">{{data.total}}</label>
+    <label class="mod two-wide">{{data.mod >= 0 ? '+' : ''}}{{data.mod}}</label>    
+    <bonus-list [data]="data.boni" (dataChange)="push()"></bonus-list>
 </div>

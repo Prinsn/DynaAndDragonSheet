@@ -8,7 +8,7 @@ export enum SkillEnum {
     Arcane = "Arcana",
     History = "History",
     Investigation = "Investigation",
-    Nature = "Nataure",
+    Nature = "Nature",
     Religion = "Religion",
     AnimalHandling = "AnimalHandling",
     Insight = "Insight",

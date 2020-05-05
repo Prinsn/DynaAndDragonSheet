@@ -10,10 +10,11 @@ export class AttributeStat extends Totalable {
         super(key);
         this.shortName = key;
         this.name = AttributeMap[key];
+        this.base = 10;
     }
 
     get mod() {
-        return Math.floor(this.base - 10) / 2;
+        return Math.floor((this.total - 10) / 2);
     }
 
     get bonus() {

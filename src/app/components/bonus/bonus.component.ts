@@ -9,37 +9,37 @@ import { Proficiency } from 'src/app/classes/proficiency';
 })
 export class BonusComponent {
     //todo verify name
-    @Output() ngModelChanged = new EventEmitter<Bonus>()
+    @Output() dataChange = new EventEmitter<Bonus>()
     @Output() remove = new EventEmitter<Bonus>()
-    @Input() ngModel: Bonus;
+    @Input() data: Bonus;
     @Input() label: string;    
 
     get value(){
-        return this.ngModel.value;
+        return this.data.value;
     }
 
     set value(x: number) {        
-        this.ngModel.value = x;
-        this.ngModelChanged.emit(this.ngModel);
+        this.data.value = x;
+        this.dataChange.emit(this.data);
     }
 
     get name(){
-        return this.ngModel.source;
+        return this.data.source;
     }
 
     set name(x: string) {        
-        this.ngModel.source = x;
-        this.ngModelChanged.emit(this.ngModel);
+        this.data.source = x;
+        this.dataChange.emit(this.data);
     }
 
     get disabled() {
-        return this.ngModelChanged instanceof Proficiency
-            ? this.ngModelChanged.isProficiency
+        return this.dataChange instanceof Proficiency
+            ? this.dataChange.isProficiency
             : false;
     }
 
     delete(){
-        if(this.ngModel)
-            this.remove.next(this.ngModel);
+        if(this.data)
+            this.remove.next(this.data);
     }
 }

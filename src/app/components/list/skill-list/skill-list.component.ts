@@ -7,10 +7,10 @@ import { Skill } from 'src/app/classes/skill';
     styleUrls: ["./skill-list.component.less"]
 })
 export class SkillListComponent {
-    @Input() ngModel: Skill[];
-    @Output() ngModelChange = new EventEmitter<Skill[]>();
+    @Input() data: Skill[];
+    @Output() dataChange = new EventEmitter<Skill[]>();
 
     push(){
-        this.ngModelChange.next(this.ngModel);
+        this.dataChange.next(this.data);
     }
 }

@@ -11,25 +11,26 @@ export class Bonus {
         this.isFunc = this.isFunction(value);
         this._value = this.isFunc 
             ? (value as () => number).bind(bindTo)
-            : value;
+            : value || 0;
     }
 
     get disabled() {
         return this.isFunc;
     }
 
-    set value(i: number) {
+    set value(i: number) {    
         if(this.disabled)
             return;
 
-        this._value = this.value;
+        this._value = i;
     }
 
-    get value() {
-        if(this.isFunc){
+    get value() {    
+        if(this.isFunc){            
             let foo = (this._value as () => number);
             return foo();
         }
+
         return this._value as number;
     }
 

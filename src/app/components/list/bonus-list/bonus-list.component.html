@@ -1,4 +1,6 @@
 <div class="bonus-list">
-    <bonus *ngFor="let bonus of ngModel" [ngModel]="bonus" (ngModelChanged)="push()" (remove)="remove($event)"></bonus>
+    <ng-container *ngFor="let bonus of data">
+        <bonus [data]="bonus" (dataChange)="push()" (remove)="remove($event)"></bonus>        
+    </ng-container>
     <button (click)="newBonus()">+</button>
 </div>

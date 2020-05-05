@@ -18,7 +18,7 @@ export class Character {
 
     private profBonus: Proficiency;
     get proficiencyBonus() {       
-        if(!this.proficiency)
+        if(!this.profBonus)
             this.profBonus = new Proficiency(this.proficiency, this)
         
         return this.profBonus;

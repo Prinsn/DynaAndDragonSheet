@@ -6,10 +6,10 @@ import { AttributeStat } from 'src/app/classes/attribute';
     styleUrls: ["./attribute.component.less"]
 })
 export class AttributeComponent {
-    @Input() ngModel: AttributeStat;
-    @Output() ngModelChange = new EventEmitter<AttributeStat>();
+    @Input() data: AttributeStat;
+    @Output() dataChange = new EventEmitter<AttributeStat>();
 
     push(){
-        this.ngModelChange.next();
+        this.dataChange.next();
     }
 }

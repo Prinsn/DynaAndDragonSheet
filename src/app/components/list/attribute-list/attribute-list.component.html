@@ -1,3 +1,5 @@
 <div class="attribute-list">
-    <attribute *ngFor="let attr of ngModel" [ngModel]="attr"></attribute>
+    <ng-container *ngFor="let attr of data">
+        <attribute [data]="attr"></attribute>
+    </ng-container>
 </div>

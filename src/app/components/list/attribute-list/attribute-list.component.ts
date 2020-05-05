@@ -7,10 +7,10 @@ import { AttributeStat } from 'src/app/classes/attribute';
     styleUrls: ["./attribute-list.component.less"]
 })
 export class AttributeListComponent {
-    @Input() ngModel: AttributeStat[];
-    @Output() ngModelChange = new EventEmitter<AttributeStat[]>();
+    @Input() data: AttributeStat[];
+    @Output() dataChange = new EventEmitter<AttributeStat[]>();
 
     push(){
-        this.ngModelChange.next();
+        this.dataChange.next(this.data);
     }
 }

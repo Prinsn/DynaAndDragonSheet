@@ -7,7 +7,7 @@ export class Skill extends Totalable {
     
     constructor(name: string, attr: Bonus, prof: Proficiency) {
         super(name);
-        this.boni.push(attr);
+        this.boni.push(attr);        
         this.boni.push(prof);
 
         this.proficiency = prof;

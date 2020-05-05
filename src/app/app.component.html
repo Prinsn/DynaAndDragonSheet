@@ -1,6 +1,7 @@
-<div>
-    <character-misc></character-misc>
-    <attribute-list></attribute-list>
-    <save-list></save-list>
-    <skill-list></skill-list>    
+<character-misc [data]="character.misc"></character-misc>
+<br/>
+<div class="flex-box">
+    <attribute-list [data]="character.stats"></attribute-list>
+    <!-- <save-list [data]="character.saves"></save-list>
+    <skill-list [data]="character.skills"></skill-list>     -->
 </div>

@@ -7,5 +7,5 @@ import { CharacterMiscilany } from 'src/app/classes/character';
     styleUrls: ["./character-misc.component.less"]
 })
 export class CharacterMiscComponent {
-    @Input() ngModel: CharacterMiscilany;
+    @Input() data: CharacterMiscilany;
 }
