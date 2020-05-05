@@ -1,0 +1,6 @@
+<div class="attribute">
+    <label class="name">{{ngModel.shortName}}</label>
+    <input class="value" [ngModel]="ngModel.total" (ngModelChange)="push()"><input>
+    <label class="mod">{{ngModel.mod}}</label>
+    <bonus-list [ngModel]="ngModel.boni" (ngModelChnage)="push()"></bonus-list>
+</div>

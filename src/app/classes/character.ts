@@ -1,19 +1,38 @@
-import { Stats } from 'fs';
 import { Skill } from './skill';
+import { Proficiency } from './proficiency';
+import { AttributeStat } from './attribute';
+import { Save } from './save';
 
-interface CharacterMiscilany {
+export interface CharacterMiscilany {
 
 }
 
 export class Character {
     name: string;
-    level: number;
-    stats: Stats[];
-    skills: Skill[];
+    level: number = 1;
+    stats: AttributeStat[] = [];
+    skills: Skill[] = [];
+    saves: Save[] = [];
+     
     misc: CharacterMiscilany;
 
-    get proficiency() {
-        // TODO Calcuate proficiency from level
-        return 0;
+    private profBonus: Proficiency;
+    get proficiencyBonus() {       
+        if(!this.proficiency)
+            this.profBonus = new Proficiency(this.proficiency, this)
+        
+        return this.profBonus;
+    }
+
+    proficiency() {
+        return 2 + Math.floor(.25 * this.level);
+    }
+
+    getSave(attr: AttributeStat) {
+        return new Save(
+            attr.shortName || attr.name, 
+            attr.bonus, 
+            this.proficiencyBonus
+        );
     }
 }

@@ -1,11 +1,13 @@
-type SourceValue = number | (() => number);
+export type SourceValue = number | (() => number);
 
 export class Bonus {
     source: string;
     _value: SourceValue;
     private isFunc: boolean;
+    removable: boolean = false;
 
-    constructor(value: SourceValue, bindTo?) {
+    constructor(name: string, value: SourceValue, bindTo?) {
+        this.source = name;
         this.isFunc = this.isFunction(value);
         this._value = this.isFunc 
             ? (value as () => number).bind(bindTo)
@@ -24,7 +26,11 @@ export class Bonus {
     }
 
     get value() {
-        return this.isFunc ? (this.value as () => number)() : this._value;
+        if(this.isFunc){
+            let foo = (this._value as () => number);
+            return foo();
+        }
+        return this._value as number;
     }
 
     isFunction(functionToCheck) {

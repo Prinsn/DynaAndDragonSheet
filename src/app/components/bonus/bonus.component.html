@@ -1,0 +1,5 @@
+<div class="flex">
+    <input [(ngModel)]="name" [disabled]="disabled"><input>
+    <input [(ngModel)]="value" [disabled]="disabled"><input>
+    <button *ngIf="ngModel.removable" (click)="delete()">-</button>
+</div>
