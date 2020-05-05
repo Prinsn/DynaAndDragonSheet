@@ -1,0 +1,1 @@
+.final{border:dashed;border-radius:10px;border-color:pink}.mod{border:dashed;border-radius:10px;border-color:red}.flex-box{display:flex;justify-content:space-between}.two-wide{width:20px}.two-wide:not(:first-child){margin-left:5px}input{margin:5px}span.center{display:flex;justify-content:center}input[type=number]{width:40px}
