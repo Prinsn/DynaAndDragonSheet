@@ -1,5 +1,10 @@
 <character-misc [data]="character"></character-misc>
 <br/>
+<!-- Needs some kind of serialization code, the JSON works but it is not bound to classes and actually breaks -->
+<!-- <button style="margin-right: 10px" (click)="export()">Export</button> -->
+<!-- <button (click)="import()">Import</button> -->
+<br/>
+<br/>
 <div class="flex-box">
     <attribute-list [data]="character.stats"></attribute-list>
     <save-list [data]="character.saves"></save-list>

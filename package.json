@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "commit-git-page": "ng build --prod --output-path docs --base-href DynaAndDragonSheet && git push && ngh --message=\"CI/CD\""
+    "commit-git-page": "ng build --prod --output-path docs --base-href DynaAndDragonSheet && git add docs && git commit -m \"Git Hub Page Push\" && git push && ngh --message=\"CI/CD\""
   },
   "private": true,
   "dependencies": {

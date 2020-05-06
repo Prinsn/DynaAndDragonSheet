@@ -15,10 +15,8 @@ export class Totalable {
         try {
             this.boni.forEach(b => {                
                 //Input value is coming in as string
-                var val = b.value as any as string;
-                console.log(val);
+                var val = b.value as any as string;                
                 total += parseInt(val || '0');
-                console.log(total);
             });
         }
         catch {
