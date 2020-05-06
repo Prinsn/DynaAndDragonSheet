@@ -10,6 +10,10 @@ export class SaveComponent {
     @Input() data: Save;
     @Output() dataChange = new EventEmitter<Save>();
    
+    ngOnInit(){
+        // debugger;
+    }
+
     push(){      
         this.dataChange.next(this.data);
     }

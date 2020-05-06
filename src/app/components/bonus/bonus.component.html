@@ -1,4 +1,5 @@
 <div class="flex">
+    <button (click)="help()">help</button>
     <input [ngModel]="name" [disabled]="disabled"/>
     <input type="number" class="two-wide" [(ngModel)]="value" [disabled]="disabled" min="-99" max="99"/>
     <button *ngIf="data.removable" (click)="delete()">-</button>

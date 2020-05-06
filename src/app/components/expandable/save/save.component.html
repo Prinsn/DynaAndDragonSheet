@@ -1,6 +1,6 @@
 <div class="save">
     <label class="two-wide">{{data.name}}</label>
     <label class="final two-wide">{{data.total}}</label>
-    <input class="two-wide" type="checkbox" [ngModel]="data.proficiency.proficient" (change)="push()" min="-99" max="99"/>
+    <input class="two-wide" type="checkbox" [(ngModel)]="data.proficiency.proficient" (change)="push()" min="-99" max="99"/>
     <bonus-list [data]="data.boni" (dataChange)="push()"></bonus-list>
 </div>

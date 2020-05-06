@@ -1,3 +1,5 @@
 <div class="save-list">
-    <save *ngFor="let save of data" [data]="save" (dataChange)="push()"></save>
+    <ng-container *ngFor="let save of data">
+        <save [data]="save" (dataChange)="push()"></save>
+    </ng-container>
 </div>

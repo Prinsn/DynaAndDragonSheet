@@ -14,6 +14,10 @@ export class BonusComponent {
     @Input() data: Bonus;
     @Input() label: string;    
 
+    help() {
+        debugger;
+    }
+
     get value(){
         return this.data.value;
     }
@@ -33,9 +37,9 @@ export class BonusComponent {
     }
 
     get disabled() {
-        return this.dataChange instanceof Proficiency
-            ? this.dataChange.isProficiency
-            : false;
+        return this.data instanceof Proficiency                 
+            ? this.data.isProficiency
+            : this.data.disabled;
     }
 
     delete(){

@@ -15,17 +15,13 @@ export class Character {
     saves: Save[] = [];
      
     misc: CharacterMiscilany;
-
-    private profBonus: Proficiency;
+    
     get proficiencyBonus() {       
-        if(!this.profBonus)
-            this.profBonus = new Proficiency(this.proficiency, this)
-        
-        return this.profBonus;
+        return new Proficiency(this.proficiency, this)        
     }
 
     proficiency() {
-        return 2 + Math.floor(.25 * this.level);
+        return 2 + Math.floor(.25 * (this.level -1));
     }
 
     getSave(attr: AttributeStat) {

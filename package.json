@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:electron": "ng build --base-href ./ && electron .",
-    "gitpage": "ng build --prod --output-path docs --base-href DynaAndDragonSheet"
+    "ghb-cicd": "ng build --prod --base-href \"DynaAndDragonSheet\" && ngh --message=\"CI/CD\""
   },
   "private": true,
   "dependencies": {
