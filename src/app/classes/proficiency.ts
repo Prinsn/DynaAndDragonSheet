@@ -11,8 +11,6 @@ export class Proficiency extends Bonus {
     }
 
     get value() {
-        console.log(this.proficient);
-        
         return this.proficient 
             ? super.value 
             : 0;
